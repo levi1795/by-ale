@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti 💖</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #2b0033, #000);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* CONTENIDO */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 20px pink;
+    animation: aparecer 2s ease forwards;
+    opacity: 0;
+}
+
+p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: aparecer 3s ease forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* CORAZONES FONDO */
+.heart {
+    position: absolute;
+    color: rgba(255, 100, 150, 0.2);
+    font-size: 20px;
+}
+
+/* CORAZONES CAYENDO */
+.fall {
+    position: absolute;
+    color: pink;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    from {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* ALE COMO RAYO */
+.ale {
+    position: absolute;
+    color: rgba(255,255,255,0.9);
+    font-weight: bold;
+    text-shadow: 0 0 10px white, 0 0 20px pink;
+    animation: rayo linear infinite;
+}
+
+@keyframes rayo {
+    0% {
+        transform: translateY(-20vh);
+        opacity: 1;
+        text-shadow: 0 0 10px white, 0 0 20px pink;
+    }
+    100% {
+        transform: translateY(120vh);
+        opacity: 0;
+        text-shadow: 0 0 40px white, 0 0 60px pink;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>
+        💖 ¿Te gustaría empezar una nueva etapa conmigo como pareja? 💕
+    </h1>
+
+    <p>
+        No necesitas responder aquí...<br>
+        solo mírame y dime lo que sientas 💫
+    </p>
+</div>
+
+<script>
+// CORAZONES DE FONDO
+for (let i = 0; i < 50; i++) {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.top = Math.random() * 100 + "vh";
+    h.style.fontSize = (10 + Math.random() * 30) + "px";
+    document.body.appendChild(h);
+}
+
+// CORAZONES CAYENDO
+for (let i = 0; i < 30; i++) {
+    let f = document.createElement("div");
+    f.className = "fall";
+    f.innerHTML = "💖";
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.animationDuration = (3 + Math.random() * 4) + "s";
+    document.body.appendChild(f);
+}
+
+// "ALE" COMO RAYOS
+for (let i = 0; i < 25; i++) {
+    let a = document.createElement("div");
+    a.className = "ale";
+    a.innerText = "Ale";
+    a.style.left = Math.random() * 100 + "vw";
+    a.style.animationDuration = (1 + Math.random() * 2) + "s";
+    document.body.appendChild(a);
+}
+</script>
+
+</body>
+</html>
